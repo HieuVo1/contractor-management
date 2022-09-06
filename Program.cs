@@ -1,8 +1,15 @@
+using contractor_management.Data;
 using contractor_management.Services.ContractorService;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+builder.Services.AddDbContext<ContractorDBContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ContractorDbConnection"));
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

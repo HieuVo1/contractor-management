@@ -7,6 +7,7 @@ namespace contractor_management.DTOs.Contractor.Request
 {
     public class NewContractor
     {
+        public string Id { get; set; }
         public string Name { get; set; }
         public string Representative { get; set; }
         public string Profession { get; set; }
